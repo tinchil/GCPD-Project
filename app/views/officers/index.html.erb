@@ -1,0 +1,34 @@
+<h3>Active Officers in GCPD</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Badge Number</th>
+      <th>Rank</th>
+      <th class="align_center">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @active_officers.each do |officer| %>
+      <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+        <td><%= link_to officer.name, officer_path(officer) %></td>
+        <td><%= officer.rank %></td>
+        <td><%= officer.unit.name %></td>
+        <td class="align_center">
+          <%= link_to edit_officer_path(officer) do %>
+          <% end %>
+          <%= link_to officer_path(officer), method: :delete, data: {confirm: 'Confirm Delete?'} do %>
+          <% end %>
+        </td>
+      </tr>   
+    <% end %>
+  </tbody>
+</table>
+
+  <br />
+
+<%= will_paginate @active_officers, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>
+
+<p><strong>
+  <%= link_to "New Officer", new_officer_path, class: 'btn btn-info' %> 
+</strong></p>

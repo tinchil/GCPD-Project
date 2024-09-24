@@ -1,0 +1,27 @@
+<% if @open_investigations.empty? %>
+  <h4>No open cases at this time</h4>
+<% else %>
+  <h4>Open Investigations in GCPD</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Crime Location</th>
+        <th>Date opened</th>
+        <th>Batman Involved?</th>
+        <th>Number of Officers Assigned</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @open_investigations.each do |investigation| %>
+        <tr>
+          <td><%= link_to investigation.title, investigation_path(investigation) %></td>
+          <td><%= investigation.crime_location %></td>
+          <td><%= investigation.date_opened.strftime("%m/%d/%y") %></td>
+          <td><%= investigation.batman_involved ? "Yes" : "No" %></td>
+          <td><%= investigation.officers.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

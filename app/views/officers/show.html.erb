@@ -1,0 +1,50 @@
+<h3><%= "Officer Information for " + @officer.proper_name %></h3>
+
+<div class="card grey lighten-4">
+  <div class="card-content">
+    <b>Current unit:&nbsp;&nbsp;</b><br>
+    <%= @officer.unit.name %><br>
+
+    <b>Current rank:&nbsp;&nbsp;</b><br>
+    <%= @officer.rank %><br>
+
+    <b>SSN:&nbsp;&nbsp;</b><br>
+    <%= @officer.ssn.insert(3, '-').insert(6, '-') %><br>
+
+    <b>Active duty?&nbsp;&nbsp;</b><br>
+    <%= @officer.active ? "Yes" : "No" %><br>
+    
+    <% unless @current_assignments.nil? || @current_assignments.empty? %>
+      <div class="card" id="current_assignments">
+        <div class="card-content">
+          <b>Current Assignments&nbsp;&nbsp;</b><br>
+          <ul>
+            <% @current_assignments.each do |assignment| %>
+              <li><%= "Starting" %></li><br>
+              <li><%= assignment.investigation.title %></li> 
+            <% end %>
+          </ul><br>
+        </div>
+      </div>
+    <% end %>
+    
+    <% unless @past_assignments.nil? || @past_assignments.empty? %>
+      <div class="card" id="past_assignments">
+        <div class="card-content">
+          <b>Past Assignments&nbsp;&nbsp;</b><br>
+          <ul>
+            <% @past_assignments.each do |assignment| %>
+              <li><%= "Ending" %></li><br>
+              <li><%= assignment.investigation.title %></li> 
+            <% end %>
+          </ul><br>
+        </div>
+      </div>
+    <% end %>
+    
+    <br>
+    <p><strong>
+      <%= link_to "Add a new assignment", new_assignment_path(officer_id: @officer.id), class: 'btn btn-info' %>
+    </strong></p>
+  </div>
+</div>

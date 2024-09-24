@@ -1,0 +1,12 @@
+﻿File,Tool,Method_Name,Prompt(s)_Used
+ExampleFile,ChatGPT,ExampleMethod,My prompt was… Replace this row with your real first use of Gen AI
+Officers/show.html.erb,ChatGPT,Current Assignment, My prompt was… Create a current assignment card that displays the current assignments for this officer
+Officers/show.html.erb,ChatGPT,Past Assginment, My prompt was… Create a past assignment card that displays the past assignments for this officer
+Officers/index.html.erb,Copilot, will_paginate, My prompt was… Implement pagination for the officers index page
+Units/show.html.erb,Copilot, will_paginate, My prompt was… Implement pagination for the units show page
+Units/show.html.erb,Copilot, Statistics Card, My prompt was… Create a statistics card that displays number of active officers number of unique open investigations number of unique closed investigations and cases involving batman in this unit
+Assignment.js,ChatGPT & Copilot, Assignment, My prompt was… Current Assignments: There will be a card/panel showing the assignment of officers who are currently working on the investigation. This list will have the rank and name of the officer as well as the date the officer was assigned to the case. If there are no officers currently assigned to the investigation a note to that effect should appear.
+InvestigationNotes.js, Copilot, InvestigationNoteEditor, My prompt was… Create an InvestigationNoteEditor editor for InvestigationNote and reference the InvestigationOverviewEditor in InvestigationOverview.js to provide an option to add a new note.
+InvestigationNotes.js, Copilot, InvestigationNote, My prompt was… Investigation Notes: There is a panel and/or series of cards showing notes that assigned officers have made regarding the investigation the date the note was made and the name of the officer making the note.
+Suspects.js, Copilot, SuspectEditor, My prompt was… Create a SuspectEditor editor for Suspect and reference the Crime.js file to provide an option to add a new suspect.
+Suspects.js, Copilot, Suspect, My prompt was… There will be a card/panel containing the list of suspects associated with the investigation both the name of the criminal and the date the criminal became an official suspect. If there are no current suspects for an investigation a note to that effect should appear. In addition for each criminal in the suspect list there should be some control to drop the person as a suspect; note that this will not remove them from the list but rather set the dropped date to the current date.

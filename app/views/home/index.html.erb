@@ -1,0 +1,15 @@
+<div class="row">  
+  <% unless logged_in? %>
+    <%= link_to 'Login', login_path, class: 'btn btn-info' %>
+  <% end %>
+  <h3>Welcome to GCPD</h3>  
+  <div class="col s8">
+    <div class="card blue lighten-5">
+      <div class="card-content">
+        <p>The Gotham City Police Department (GCPD) is the law enforcement agency 
+        responsible for maintaining order and combating crime in the fictional Gotham City.</p>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
